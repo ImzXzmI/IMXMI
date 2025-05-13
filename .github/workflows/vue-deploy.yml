@@ -1,24 +1,17 @@
 name: Build Vue
 
-on:
-  push:
-    branches:
-      - main  # Или ваша основная ветка, если она называется иначе
+on: [push]
 
 jobs:
   build_vue:
     runs-on: ubuntu-latest
     name: Build Vue
-
     steps:
-      # Шаг: Получить код из репозитория
       - uses: actions/checkout@v2
-
-      # Шаг: Собрать и задеплоить приложение
       - id: Build-Vue
         uses: xRealNeon/VuePagesAction@1.0.1
         with:
-          username: 'ImzXzmI'  # Замените на ваш GitHub логин
-          reponame: 'IMXMI'    # Замените на имя вашего репозитория
-          token: ${{ secrets.GITHUB_TOKEN }}  # Стандартный GitHub токен
+          username: 'ImzXzmI'
+          reponame: 'IMXMI'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
